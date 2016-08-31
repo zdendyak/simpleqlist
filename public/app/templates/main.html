@@ -1,0 +1,35 @@
+<div class="list-header">
+	<h2> Опитувальні листи</h2>
+</div>
+	<div class="clearfix">
+		<p class="search-label pull-left"> <strong>Шукати: </strong><input class="search-field" ng-model="searchField" /></p>
+		<a ui-sref="qform"><button class="add-button btn btn-success pull-right">Додати</button></a>
+	</div>
+
+	<div uib-alert ng-class="'alert-success'" ng-show="message" style="margin-top: 50px;" close="closeAlert()">{{message}}</div>
+
+	<div class="all-clients clearfix">
+	  <uib-accordion close-others="oneAtATime">
+	    <div uib-accordion-group class="panel-default" ng-repeat="qlist in qlists | filter: searchField | orderBy: '-date'"> 
+		    <uib-accordion-heading>
+	        {{qlist.client.name + "  (" + qlist.client.adress + ")"}}<span class="pull-right">{{qlist.date | date: 'dd/MM/yyyy'}}</span>
+	      </uib-accordion-heading>
+	        <div><strong>Контактна особа: </strong>{{qlist.client.contactPerson}}</div>
+	        <div><strong>Телефон: </strong>{{qlist.client.phone}}</div>
+	        <div><strong>E-mail: </strong>{{qlist.client.email}}</div>
+	        <h3>Параметри</h3>
+	      	<div><strong>Розміри: </strong>{{qlist.coldRoom.len + 'x' + qlist.coldRoom.width + 'x' + qlist.coldRoom.height + ' м'}}</div>
+	      	<div><strong>Продукт: </strong>{{qlist.coldRoom.productName}}</div>
+	      	<div><strong>Завантаження: </strong> загальне {{qlist.coldRoom.fullWeight}} т, одноразове {{qlist.coldRoom.dailyWeight}} т</div>
+	      	<div><strong>Температура: </strong> початкова {{qlist.coldRoom.startTemp}}C, кінцева {{qlist.coldRoom.finishTemp}}C</div>
+	      	<div><strong>Примітка: </strong>{{qlist.coldRoom.description}}</div>
+		    <div><strong>Лист заповнив(-ла): </strong>{{qlist.managerName}}</div>
+			<div class="pull-right">
+				<a ui-sref="qlistDetail({id: qlist._id})"><button class="btn btn-primary" style="margin: 10px">Відкрити</button></a>
+				<button class="btn btn-danger" ng-click="delete(qlist._id)" style="margin: 10px">Видалити</button>
+			</div>
+	    </div>
+	  </uib-accordion>
+	</div>
+</div>
+

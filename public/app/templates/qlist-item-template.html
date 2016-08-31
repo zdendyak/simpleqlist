@@ -1,0 +1,177 @@
+		<fieldset id="company_info" title="Контактна інформація Замовника">
+			<legend>Контактна інформація:</legend>
+			<table>
+				<tr>
+					<td>Замовник: </td> <td><input type="text" ng-model="qlist.client.name" size="70" placeholder="Обов'язкове поле" autofocus required></td>
+				</tr>
+				<tr>
+					<td>Телефон: </td> <td><input type="text" ng-model="qlist.client.phone" size="70" placeholder="Обов'язкове поле" required></td>
+				</tr>
+				<tr>
+					<td>Контактна особа:  </td><td><input type="text" ng-model="qlist.client.contactPerson" size="70" placeholder="Обов'язкове поле" required></td>
+				</tr>
+				<tr>
+					<td>Адреса: </td><td><input type="text" ng-model="qlist.client.adress" size="70" placeholder="Обов'язкове поле" required></td>
+				</tr>
+				<tr>
+					<td>e-mail:</td> <td><input type="email" ng-model="qlist.client.email" size="70" ></td>
+				</tr>
+			</table>
+		</fieldset>
+
+		<fieldset id="dimentions" title="Розміри приміщення">
+			<legend>Розміри приміщення: </legend>
+			<table class="pull-left" style="margin-left: 20px">
+			  <thead>
+			  	<tr>
+					<th>Довжина</th>
+					<th>Ширина</th>
+					<th>Висота</th>
+				</tr>
+			  </thead>	
+				
+			  <tbody>
+			  	<tr>
+					<td><input type="text" ng-model="qlist.coldRoom.len"></td>
+					<td><input type="text" ng-model="qlist.coldRoom.width"></td>
+					<td><input type="text" ng-model="qlist.coldRoom.height"></td>
+				</tr>
+			  </tbody>
+			</table>
+
+			<div class="pull-left" style="margin-left: 20px; padding-left:10px">
+				<strong>Будівницво</strong>
+				<span class="radio"><input  type="radio" ng-model="qlist.exist" value="true"> в існуючому приміщенні </span>
+				<span class="radio"><input type="radio" ng-model="qlist.exist" value="false"> на вулиці "з нуля"</span>
+			</div>
+		</fieldset>
+
+		<fieldset id="characteristics" title="Характеристики приміщення">
+			<legend>Характеристики приміщення: </legend>
+			<table>
+			  <thead>
+			  	<tr>
+					<th>Назва</th>
+					<th>Матеріал </th>
+					<th>Товщина, мм</th>
+					<th>Ізоляція</th>
+					<th>Товщина, мм</th>
+				</tr>
+			  </thead>
+			  <tbody>
+			  	<tr>
+					<td>Стіни: </td> 
+					<td><input type="text" ng-model="qlist.coldRoom.wall.material"></td>
+					<td><input type="text" ng-model="qlist.coldRoom.wall.matThick"></td>
+					<td><input type="text" ng-model="qlist.coldRoom.wall.isolation"></td>
+					<td><input type="text" ng-model="qlist.coldRoom.wall.isolThick"></td>
+				</tr>
+				<tr>
+					<td>Стеля: </td> 
+					<td><input type="text" ng-model="qlist.coldRoom.ceil.material"></td>
+					<td><input type="text" ng-model="qlist.coldRoom.ceil.matThick"></td>
+					<td><input type="text" ng-model="qlist.coldRoom.ceil.isolation"></td>
+					<td><input type="text" ng-model="qlist.coldRoom.ceil.isolThick"></td>
+				</tr>
+				<tr>
+					<td>Підлога: </td>
+					<td><input type="text" ng-model="qlist.coldRoom.floor.material"></td>
+					<td><input type="text" ng-model="qlist.coldRoom.floor.matThick"></td>
+					<td><input type="text" ng-model="qlist.coldRoom.floor.isolation"></td>
+					<td><input type="text" ng-model="qlist.coldRoom.floor.isolThick"></td>
+				</tr>
+			  </tbody>
+			</table>
+			<br/>
+			<div id="calc_isolation" >
+				<div>
+					<input type="checkbox" ng-model="qlist.coldRoom.calcIsolation"> 
+					рахувати вартість утеплення стін, стелі
+
+				</div>
+				<div>
+					<input type="checkbox" ng-model="qlist.coldRoom.calcFloor"> 
+					рахувати вартість промислової підлоги
+
+				</div>
+			</div>
+		</fieldset>
+
+		<fieldset id="doors_field" title="Двері">
+			<legend>Двері: </legend>
+			<table id="doors_table" style="margin-left: 20px">
+			  <thead>
+			  	<tr>
+					<th>Висота</th>
+					<th>Ширина</th>
+					<th>Тип дверей</th>
+				</tr>
+			  </thead>
+				
+			  <tbody>
+			  	<tr>
+					<td><input type="text" ng-model="qlist.coldRoom.doorHeight" title="Висота" ></td>
+					<td><input type="text" ng-model="qlist.coldRoom.doorWidth" title="Ширина" ></td>
+					<td>
+						<select ng-model="qlist.coldRoom.doorType" title="Тип">
+							<option value="Розпашні">Розпашні</option>
+							<option value="Відкатні">Відкатні</option>
+							<option value="Газонепоникні">Газонепроникні</option>
+						</select>
+					</td>
+				</tr>
+			  </tbody>
+			</table>
+		</fieldset>
+
+		<fieldset id="product_field" title="Продукція">
+			<legend>Продукція: </legend>
+			<table id="product_table">
+			  <thead>
+			  	<tr>
+					<th>Параметр</th>
+					<th>Дані</th>
+				</tr>
+			  </thead>
+			  
+			  <tbody>
+			  	<tr>
+					<td>Продукт: </td> 
+					<td><input type="text" ng-model="qlist.coldRoom.productName"></td>
+				</tr>
+				<tr>
+					<td>Маса, яка зберігається, т: </td> 
+					<td><input type="text" ng-model="qlist.coldRoom.fullWeight"></td>
+				</tr>
+				<tr>
+					<td>Одноразова загрузка, т: </td>
+					<td><input type="text" ng-model="qlist.coldRoom.dailyWeight"></td>
+				</tr>
+				<tr>
+					<td>Початкова температура, С: </td>
+					<td><input type="text" ng-model="qlist.coldRoom.startTemp"></td>
+				</tr>
+				<tr>
+					<td>Кінцева температура, С: </td>
+					<td><input type="text" ng-model="qlist.coldRoom.finishTemp"></td>
+				</tr>
+				<tr>
+					<td>Час термобробки, год: </td>
+					<td><input type="text" ng-model="qlist.coldRoom.coolingTime"></td>
+				</tr>
+			  </tbody>		
+			</table>
+		</fieldset>
+
+		<fieldset id="comment" title="Додаткова інформація">
+			<legend>Додаткова інформація: </legend>
+			<textarea ng-model="qlist.coldRoom.description" cols="90" rows="3"></textarea>
+			<div style="margin-top:10px">
+				<label>Лист заповнив(-ла): </label>
+				<select ng-model="qlist.manager" style="width:400px">
+					<option ng-repeat="user in users" value="{{user.id}}">{{user.firstName + " " + user.lastName}}</option>
+				</select>
+
+			</div>
+			
+		</fieldset>

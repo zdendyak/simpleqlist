@@ -1,0 +1,20 @@
+<div class="col-sm-6 col-sm-offset-3">
+  <form class="form-auth" ng-submit="login(user)">
+	<h2>Ввійдіть</h2>
+	<p>або <a ui-sref="register">зареструйтесь</a>, якщо ще не маєте облікового запису</p>
+
+	<p class="text-warning">{{error_message}}</p>
+	<div style="margin-top:10px">
+		<label for="inputUsername">Логін</label>
+		<input type="username" id="inputUsername" ng-model="user.username" placeholder="Логін" class="form-control" required autofocus>
+	</div>
+	<div style="margin-top:10px">
+		<label for="inputPassword">Пароль</label>
+		<input type="password" id="inputPassword" ng-model="user.password" placeholder="Пароль" class="form-control" required="">
+	</div>
+	<div  style="margin-top:10px">
+		<input class="btn btn-primary" type="submit" value="Ввійти" />
+	</div>
+	
+  </form>
+</div>

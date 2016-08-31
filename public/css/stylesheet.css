@@ -1,0 +1,218 @@
+body {
+  width: 100%;
+  padding: 5px auto;
+  background-color: white;
+  text-align: left;
+  margin: 10px auto;
+}
+
+.container {
+	width: 900px;
+}
+
+.jumbotron {
+  margin-top: 30px;
+  padding: 30px 60px;
+}
+
+.header, .footer {
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+.header {
+  padding-bottom: 10px;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.header h3 {
+  margin-top: 5px;
+  margin-bottom: 0;
+}
+
+.footer {
+  margin-top: 20px;
+  color: #777;
+  border-top: 1px solid #e5e5e5;
+}
+
+.menu {
+  margin-left: 10px;
+}
+
+.menu li {
+    float: left;
+    margin-bottom: 5px;
+    border-radius: 7px;
+    padding: 5px;
+
+}
+
+.menu li a,  .menu li a:focus, .menu li a:hover {
+  font-weight: bold;
+  cursor: pointer;
+  background-color: white;
+}
+
+
+
+.menu li.active a {
+  text-decoration: underline;
+  border-radius: 20px;
+  background-color: #337ab7;
+  color: white;
+
+}
+
+.main-view {
+	min-height: 500px;
+}
+
+.list-header h2 {
+  margin-top:20px;
+  margin-bottom: 30px;
+  text-align: center;
+  color: #2F4F4F;
+}
+
+.search-label {
+	margin-left: 20px;
+}
+
+.search-field {
+  width: 300px;
+  border-radius: 10px;
+  padding: 3px 10px;
+  border:  2px solid #E1EFE3;
+  margin-left: 5px;
+}
+
+.add-button {
+	margin-right: 20px;
+	min-width: 100px;
+}
+
+.all-clients {
+  margin-top: 20px;
+
+}
+
+.form-header h2 {
+	text-align: center;
+	color: #2F4F4F;
+	/*background-color: #E1EFE3;*/
+}
+
+.form-header p {
+	text-align: center;
+	font-size: 1.2em;
+	color: #008080;
+}
+
+form {
+  padding: 10px auto;
+  margin: 0 auto;
+  border-radius: 8px;
+}
+
+fieldset {
+  text-align: left;
+  width: 96%;
+  border: 1px solid #C0C0C0;
+  padding: 5px;
+  border-radius: 5px;
+  display: block;
+  margin: 5px auto;
+
+}
+
+legend {
+	border-bottom: 0;
+	margin-left: 5px;
+	margin-right: 5px;
+	margin-bottom: 5px;
+	font-size: 1.4em;
+	padding-left: 5px;
+	padding-right: 5px;
+	width: auto;
+
+}
+
+#company_info td, th {
+  padding: 2px;
+} 
+#company_info input {
+  max-width: 370px;
+}
+
+#dimentions table {
+  margin: 10px 20px;
+}
+
+#dimentions td, th {
+  padding: 2px;
+} 
+#dimentions input {
+  max-width: 150px;
+}
+
+#characteristics td, th {
+  padding: 1px;
+}
+
+#characteristics input {
+  max-width: 130px;
+} 
+
+#doors_field td, select {
+  padding: 2px;
+}
+#doors_field input {
+  max-width: 150px;
+}
+
+#calc_isolation {
+  margin-left: 20px;
+} 
+
+#product_field table {
+  margin-left: 20px;
+}
+#product_field td{
+  padding: 2px;
+}
+#product_field input{
+  max-width: 200px;
+}
+
+th {
+	text-align: center;
+  padding-bottom: 5px;
+}
+
+#buttons {
+  padding: 10px;
+}
+.form-buttons {
+	margin: 20px 0 5px 0;
+}
+input[type="reset"]{
+	margin-top: 5px;
+	width: 140px;
+}
+input[type="submit"]{
+	margin-top: 5px;
+	width: 140px;
+	font-weight: bold;
+	float: right;
+}
+input[type="text"],textarea {
+  padding-left: 5px;
+}
+textarea {
+  width: 540px;
+  margin-left: 10px;
+}
+.text-warning {
+  color: red;
+}

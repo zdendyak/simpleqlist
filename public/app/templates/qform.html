@@ -1,0 +1,20 @@
+<div class="jumbotron">
+	<p class="text-warning">{{error_message}}</p>
+	<div class="form-header">
+		<h2> Опитувальний лист на холодильну камеру </h2>
+		<p>Для розрахунку камери просимо надати якомога більше данних</p>
+	</div>
+	
+	<form ng-submit="sendQlist(qlist)">
+		<ql-item qlist="qlist" users="users"></ql-item>
+
+		<fieldset id="buttons">
+			<div class="form-buttons">
+				<input type="reset" value="Очистити форму">
+				
+				<input type="submit">
+			</div>
+		</fieldset>
+	</form>
+	<p class="text-warning">{{error_message}}</p>
+</div>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html ng-app="qlist">
+
+<head>
+	<meta charset="utf-8">	
+	<base href="/">
+	<title> Опитувальний лист на холодильну камеру </title>
+	<link rel="stylesheet" href="/vendor/bootstrap/dist/css/bootstrap.css">
+	<link type="text/css" rel="stylesheet" href="css/stylesheet.css">
+	<script type="text/javascript" src="/vendor/jquery/dist/jquery.js"></script>
+	<script type="text/javascript" src="/vendor/angular/angular.js"></script>
+	<script type="text/javascript" src="/vendor/angular-ui-router/release/angular-ui-router.js"></script>
+	<script type="text/javascript" src="/vendor/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+
+	<script type="text/javascript" src="/app/app.js"></script>
+	<script type="text/javascript" src="/app/directives/qlist-item-directive.js"></script>
+	<script type="text/javascript" src="/app/constants/auth-events-constant.js"></script>
+	<script type="text/javascript" src="/app/services/auth-service.js"></script>
+	<script type="text/javascript" src="/app/services/auth-interceptor.js"></script>
+	<script type="text/javascript" src="/app/services/qlist-service.js"></script>
+	<script type="text/javascript" src="/app/services/user-service.js"></script>
+	<script type="text/javascript" src="/app/controllers/app-controller.js"></script>
+	<script type="text/javascript" src="/app/controllers/profile-controller.js"></script>
+	<script type="text/javascript" src="/app/controllers/managers-controller.js"></script>
+	<script type="text/javascript" src="/app/controllers/register-controller.js"></script>
+	<script type="text/javascript" src="/app/controllers/login-controller.js"></script>
+	<script type="text/javascript" src="/app/controllers/qform-controller.js"></script>
+	<script type="text/javascript" src="/app/controllers/main-controller.js"></script>
+	<script type="text/javascript" src="/app/controllers/qlist-detail-controller.js"></script>
+</head>
+
+<body ng-controller="AppCtrl">
+	
+	<div class="container">	
+		<div class="header clearfix">
+			<h3 class="text-muted pull-left">ЄвроТоргСервіс</h3>
+			<nav>
+				<ul class="menu nav pull-left">
+					<li role="presentation" ui-sref-active="active"><a ui-sref="main">Головна</a></li>
+					<li role="presentation" ui-sref-active="active"><a ui-sref="qform">Опитувальний лист</a></li>
+					<li role="presentation" ui-sref-active="active"><a ui-sref="managers">Співробітники</a></li>
+				</ul>
+				<ul class="menu nav pull-right">
+					<li ng-if="!authenticated()" ui-sref-active="active"><a  ui-sref="login">Ввійти</a></li>
+					<li ng-if="!authenticated()" ui-sref-active="active"><a  ui-sref="register">Реєстрація</a></li>
+					<li ng-if="authenticated()" ui-sref-active="active"><a  ui-sref="profile">{{currentUser()}}</a></li>
+					<li ng-if="authenticated()" ><a  ng-click="logout()">Вийти</a></li>
+
+				</ul>
+			</nav>
+		</div>
+
+		<div class="main-view clearfix">
+			<ui-view></ui-view>
+		</div>
+		
+
+		<footer class="footer">
+			<p>&copy; 2016 Zdendyak</p>
+		</footer>
+	</div>
+
+</body>
+
+</html>
